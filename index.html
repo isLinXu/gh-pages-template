@@ -43,23 +43,24 @@
       padding: 1rem;
     }
     .header, .footer {
-      background-color: #3273dc;
+      background: linear-gradient(135deg, #3273dc, #275aa8);
       color: white;
-      padding: 1rem 0;
+      padding: 1.5rem 0;
       text-align: center;
-      transition: background-color 0.3s ease;
+      transition: background 0.3s ease;
     }
     .header:hover, .footer:hover {
-      background-color: #275aa8;
+      background: linear-gradient(135deg, #275aa8, #3273dc);
     }
     .header h1, .footer p {
       margin: 0;
+      font-weight: 700;
     }
     .content {
       background-color: white;
       padding: 2rem;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
+      border-radius: 12px;
       transition: box-shadow 0.3s ease;
     }
     .content:hover {
@@ -70,6 +71,8 @@
       margin: 0 auto;
       width: 100%;
       max-width: 640px; /* You can change this value based on your desired video width */
+      border-radius: 8px;
+      overflow: hidden;
     }
     .centered-caption {
       text-align: center;
@@ -77,6 +80,23 @@
       font-size: 1rem;
       color: #4a4a4a;
       margin-top: 0.5rem;
+    }
+    .button {
+      background-color: #3273dc;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .button:hover {
+      background-color: #275aa8;
+      transform: translateY(-2px);
+    }
+    .button:active {
+      transform: translateY(0);
     }
   </style>
 </head>
