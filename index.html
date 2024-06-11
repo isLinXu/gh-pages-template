@@ -1,289 +1,300 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="">
+  <meta name="description" content="">
   <meta name="keywords" content="keywords">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Paper html</title>
+  <title>Revisiting the Power of Prompt for Visual Tuning</title>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-  
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-  
-      gtag('js', new Date());
-  
-      gtag('config', 'G-PYVRSFMDRL');
-    </script>
-  
-    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-          rel="stylesheet">
-  
-    <link rel="stylesheet" href="./static/css/bulma.min.css">
-    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="./static/css/index.css">
-    <link rel="icon" href="./static/images/favicon.svg">
-  
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer src="./static/js/fontawesome.all.min.js"></script>
-    <script src="./static/js/bulma-carousel.min.js"></script>
-    <script src="./static/js/bulma-slider.min.js"></script>
-    <script src="./static/js/index.js"></script>
-  </head>
-  <body>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
 
-<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <!-- Fonts and CSS Libraries -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <!-- JavaScript Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <!-- Inline Styles -->
+  <style>
+    body {
+      font-family: 'Noto Sans', sans-serif;
+    }
+    .hero {
+      background: #f5f5f5;
+      padding: 2rem 1.5rem;
+    }
+    .publication-title {
+      color: #333;
+    }
+    .publication-authors a {
+      color: #3273dc;
+    }
+    .publication-links .button {
+      margin: 0.5rem;
+    }
+    .section {
+      padding: 3rem 1.5rem;
+    }
+    .content img {
+      max-width: 100%;
+      height: auto;
+    }
+    .content p {
+      text-align: justify;
+      font-size: 16px;
+      line-height: 1.5;
+      margin-top: 10px;
+    }
+    .navbar {
+      background: #3273dc;
+    }
+    .navbar-item, .navbar-link {
+      color: #fff;
+    }
+    .navbar-item:hover, .navbar-link:hover {
+      background: #275ba1;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
   </div>
-  <div class="navbar-menu">
+  <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
       <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
+        <span class="icon">
           <i class="fas fa-home"></i>
-      </span>
+        </span>
       </a>
-
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
           More Research
         </a>
         <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
+          <a class="navbar-item" href="https://hypernerf.github.io">HyperNeRF</a>
+          <a class="navbar-item" href="https://nerfies.github.io">Nerfies</a>
+          <a class="navbar-item" href="https://latentfusion.github.io">LatentFusion</a>
+          <a class="navbar-item" href="https://photoshape.github.io">PhotoShape</a>
         </div>
       </div>
     </div>
-
   </div>
-</nav> -->
+</nav>
 
-
+<!-- Hero Section -->
 <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Paper Title</h1>
+          <div class="is-size-5 publication-authors">
+            <!-- 可修改的地方：修改作者信息 -->
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?user=xxxx">xxxx xxxx</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=xxxx">xxxx xxxx</a><sup>2✉</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?hl=zh-CN&xxxx">xxxx xxxx</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?hl=zh-CN&xxxx">xxxx xxxx</a><sup>4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://">xxxx xxxx</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=xxxxx=pubdate">xxxx xxxx</a><sup>2</sup>,
+            </span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <!-- 可修改的地方：修改机构信息 -->
+            <span class="author-block"><sup>1</sup>xxxx xxxx,</span>
+            <span class="author-block"><sup>2</sup>xxxx xxxx,</span>
+            <span class="author-block"><sup>3</sup>xxxx xxxx,</span>
+            <span class="author-block"><sup>4</sup>xxxx xxxx,</span>
+          </div>
+          ✉ Corresponding author.
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Paper Title</h1>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                <a href="https://scholar.google.com.hk/citations?user=xxxx">xxxx xxxx</a><sup>1</sup>,
+            <div class="publication-links">
+              <!-- arxiv Link -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/xxxx" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
               </span>
-              <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=xxxx">xxxx xxxx</a><sup>2✉</sup>,
-              </span>
-              <span class="author-block">
-                <a href="https://scholar.google.com.hk/citations?hl=zh-CN&xxxx">xxxx xxxx</a><sup>3</sup>,
-              </span>
-              <span class="author-block">
-                <a href="https://scholar.google.com.hk/citations?hl=zh-CN&xxxx">xxxx xxxx</a><sup>4</sup>,
-              </span>
-              <span class="author-block">
-                <a href="https://">xxxx xxxx</a><sup>1</sup>,
-              </span>
-              <span class="author-block">
-                <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=xxxxx=pubdate">xxxx xxxx</a><sup>2</sup>,
+              <!-- Code Link -->
+              <span class="link-block">
+                <a href="https://github.com/isLinXu/" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
               </span>
             </div>
-  
-            <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>1</sup>xxxx xxxx,</span>
-              <span class="author-block"><sup>2</sup>xxxx xxxx,</span>
-              <span class="author-block"><sup>3</sup>xxxx xxxx,</span>
-              <span class="author-block"><sup>4</sup>xxxx xxxx,</span>
-            </div>
-            ✉ Corresponding author.
-            <div class="column has-text-centered">
-              <div class="publication-links">
-                <!-- arxiv Link. -->
-                </span>
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/xxxx"
-                     class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                        <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-                <!-- Code Link. -->
-                <span class="link-block">
-                  <a href="https://github.com/isLinXu/"
-                     class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                        <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                    </a>
-                </span>
-              </div>
-              <h1><strong style="color: red; font-size: x-large;">XXXX 2024 Spotlight</strong></h1>
-            </div>
+            <h1><strong style="color: red; font-size: x-large;">XXXX 2024 Spotlight</strong></h1>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-
-  <!-- 01 Summary of the paper. -->
-  <section class="section">
-    <div class="container is-max-desktop">
-        <div class="column is-full-width">
-          <h2 class="title is-4">01 Summary of the paper</h2>
-            <div class="column content">
-              <p>
-              
-              </p>  
-            </div>
-        </div>
+<!-- 01 Summary of the paper -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="column is-full-width">
+      <h2 class="title is-4">01 Summary of the paper</h2>
+      <div class="column content">
+        <p>
+          <!-- 可修改的地方：修改摘要内容 -->
+        </p>
+      </div>
     </div>
-  <!-- 01 Summary of the paper. -->
-    
-  
-  <!-- 02 Weakness of existing methods -->
-  <section class="section">
-    <div class="container is-max-desktop">
-        <div class="column is-full-width">
-          <h2 class="title is-4">02 Weakness of existing methods</h2>
-            <div class="column content">
-              <p>
+  </div>
+</section>
 
-              <br/>
-
-              </p>
-            </div>
-        </div>
+<!-- 02 Weakness of existing methods -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="column is-full-width">
+      <h2 class="title is-4">02 Weakness of existing methods</h2>
+      <div class="column content">
+        <p>
+          <!-- 可修改的地方：修改现有方法的缺点内容 -->
+        </p>
+      </div>
     </div>
-  <!-- 02 Weakness of existing methods -->
-  
-  
-  <!-- 03 Observation and motivation -->
-  <section class="section">
-    <div class="container is-max-desktop">
-        <div class="column is-full-width">
-          <h2 class="title is-4">03 Observation and motivation</h2>
-            <div class="column content">
-              <p>
+  </div>
+</section>
 
-                <br/>
-
-                <br/>
-
-                <br/>
-                <!-- Your image here -->
-                <img src="static/images/" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/> 
-                <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px;">
-                  <span style="color: #f90b0be9">Figure 1.</span> 
-                </p>
-              </p>
-            </div>
-        </div>
+<!-- 03 Observation and motivation -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="column is-full-width">
+      <h2 class="title is-4">03 Observation and motivation</h2>
+      <div class="column content">
+        <p>
+          <!-- 可修改的地方：修改观察和动机内容 -->
+          <img src="static/images/" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/>
+          <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px;">
+            <span style="color: #f90b0be9">Figure 1.</span>
+          </p>
+        </p>
+      </div>
     </div>
-  <!-- 03 Observation and motivation -->
+  </div>
+</section>
 
-
-  <!-- 04 Framework and method -->
-  <section class="section">
-    <div class="container is-max-desktop">
-        <div class="column is-full-width">
-          <h2 class="title is-4">04 Framework and method</h2>
-            <div class="column content">
-              <p>
-                <!-- Your image here -->
-                <img src="static/images/" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/> 
-                <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px;">
-                  <span style="color: #f90b0be9">
-                </p>
-                
-                <br/>
-                
-                <br/>
-                
-                <br/>
-              </p>
-            </div>
-        </div>
+<!-- 04 Framework and method -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="column is-full-width">
+      <h2 class="title is-4">04 Framework and method</h2>
+      <div class="column content">
+        <p>
+          <!-- 可修改的地方：修改框架和方法内容 -->
+          <img src="static/images/" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/>
+          <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px;">
+            <span style="color: #f90b0be9">Figure 2.</span>
+          </p>
+        </p>
+      </div>
     </div>
-  <!-- 04 Framework and method -->
+  </div>
+</section>
 
-
-
-  <!-- 05 Experiments and annalysis -->
-  <section class="section">
-    <div class="container is-max-desktop">
-        <div class="column is-full-width">
-          <h2 class="title is-4">05 Experiments and annalysis</h2>
-            <div class="column content">
-              <p>
-                
-                <br/>
-                <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px;">
-                    <span style="color: #f90b0be9">
-                </p>
-                <img src="static/images/" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/>
-                <br/>
-                <strong>.</strong>
-                <br/>
-                <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px;">
-                    <span style="color: #f90b0be9">
-                </p>
-                <br/>
-                <strong> </strong>
-                <br/>
-                <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px;">
-                    <span style="color: #f90b0be9">Table 2.</span>  
-                </p>
-                <img src="static/images/" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/>
-                <br/>
-                <strong> </strong>
-                <br/>
-                <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px;">
-                    <span style="color: #f90b0be9">Table 3.</span>
-                </p>
-                <img src="static/images/" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/>
-              </p>
-            </div>
-        </div>
+<!-- 05 Experiments and analysis -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="column is-full-width">
+      <h2 class="title is-4">05 Experiments and analysis</h2>
+      <div class="column content">
+        <p>
+          <!-- 可修改的地方：修改实验和分析内容 -->
+          <img src="static/images/" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/>
+          <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px;">
+            <span style="color: #f90b0be9">Table 1.</span>
+          </p>
+          <img src="static/images/" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/>
+          <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px;">
+            <span style="color: #f90b0be9">Table 2.</span>
+          </p>
+          <img src="static/images/" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/>
+          <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px;">
+            <span style="color: #f90b0be9">Table 3.</span>
+          </p>
+        </p>
+      </div>
     </div>
-  <!-- 05 Experiments and annalysis -->
-  
-    </div>
-  </section>
+  </div>
+</section>
 
-
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>@inproceedings{xxxx2024xxxx,
-        title = {Paper Title},
-        author = {xxxx, xxxx and xxxx, xxxx and xxxx, xxxx and xxxx},
-        booktitle = {},
-        year = {2024},
+<!-- BibTeX Section -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{xxxx2024xxxx,
+  title = {Paper Title},
+  author = {xxxx, xxxx and xxxx, xxxx and xxxx, xxxx and xxxx},
+  booktitle = {},
+  year = {2024},
 }</code></pre>
-    </div>
-  </section>
+  </div>
+</section>
+
+<!-- Navbar Burger Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+      // Add a click event on each of them
+      $navbarBurgers.forEach(el => {
+        el.addEventListener('click', () => {
+          // Get the target from the "data-target" attribute
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+
+          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+        });
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
