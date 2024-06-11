@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="">
-  <meta name="keywords" content="keywords">
+  <meta name="description" content="A template for academic papers.">
+  <meta name="keywords" content="academic, paper, template, research">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Paper-Template</title>
 
@@ -32,7 +32,7 @@
     body {
       font-family: 'Google Sans', sans-serif;
       background-color: #f5f5f5;
-      color: #363636;
+      color: #333333;
       line-height: 1.6;
       margin: 0;
       padding: 0;
@@ -59,12 +59,12 @@
     .content {
       background-color: white;
       padding: 2rem;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       border-radius: 12px;
       transition: box-shadow 0.3s ease;
     }
     .content:hover {
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
     .centered-video {
       display: block;
@@ -90,6 +90,8 @@
       font-size: 1rem;
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.3s ease;
+      display: inline-block;
+      margin-top: 1rem;
     }
     .button:hover {
       background-color: #275aa8;
@@ -98,19 +100,56 @@
     .button:active {
       transform: translateY(0);
     }
+    .navbar {
+      background: #3273dc;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .navbar a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+    }
+    .navbar a:hover {
+      background-color: white; /* 修改为白色 */
+      color: #333333; /* 确保文本颜色在白色背景上可见 */
+    }
+    .navbar-dropdown {
+      background-color: #3273dc;
+      border-radius: 8px;
+      padding: 0.5rem 0;
+    }
+    .navbar-dropdown .navbar-item {
+      color: white;
+      padding: 0.75rem 1.5rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .navbar-dropdown .navbar-item:hover {
+      background-color: #275aa8;
+      transform: translateY(-2px);
+    }
+    .navbar-dropdown .navbar-item:active {
+      transform: translateY(0);
+    }
+    @media (max-width: 768px) {
+      .navbar a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+      .container {
+        padding: 0.5rem;
+      }
+      .content {
+        padding: 1rem;
+      }
+    }
   </style>
 </head>
-
-<!-- Title Name -->
-<body>
-  <div class="container">
-    <header class="header">
-      <!-- 可修改的地方：标题名称 -->
-      <h1>Paper Template</h1>
-    </header>
-    </main>
-  </div>
-</body>
 
 <!-- Navbar -->
 <nav class="navbar" role="navigation" aria-label="main navigation">
