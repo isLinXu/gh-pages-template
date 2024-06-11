@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="">
+  <meta name="keywords" content="keywords">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Revisiting the Power of Prompt for Visual Tuning</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+  
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+  
+      gtag('js', new Date());
+  
+      gtag('config', 'G-PYVRSFMDRL');
+    </script>
+  
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+  
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./static/images/favicon.svg">
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+  </head>
+  <body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav> -->
+
+
+<section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Paper Title</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://scholar.google.com.hk/citations?user=xxxx">xxxx xxxx</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=xxxx">xxxx xxxx</a><sup>2✉</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com.hk/citations?hl=zh-CN&xxxx">xxxx xxxx</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com.hk/citations?hl=zh-CN&xxxx">xxxx xxxx</a><sup>4</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://">xxxx xxxx</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=xxxxx=pubdate">xxxx xxxx</a><sup>2</sup>,
+              </span>
+            </div>
+  
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>xxxx xxxx,</span>
+              <span class="author-block"><sup>2</sup>xxxx xxxx,</span>
+              <span class="author-block"><sup>3</sup>xxxx xxxx,</span>
+              <span class="author-block"><sup>4</sup>xxxx xxxx,</span>
+            </div>
+            ✉ Corresponding author.
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- arxiv Link. -->
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/xxxx"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/isLinXu/"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                    </a>
+                </span>
+              </div>
+              <h1><strong style="color: red; font-size: x-large;">XXXX 2024 Spotlight</strong></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 01 Summary of the paper. -->
+  <section class="section">
+    <div class="container is-max-desktop">
+        <div class="column is-full-width">
+          <h2 class="title is-4">01 Summary of the paper</h2>
+            <div class="column content">
+              <p>
+              
+              </p>  
+            </div>
+        </div>
+    </div>
+  <!-- 01 Summary of the paper. -->
+    
+  
+  <!-- 02 Weakness of existing methods -->
+  <section class="section">
+    <div class="container is-max-desktop">
+        <div class="column is-full-width">
+          <h2 class="title is-4">02 Weakness of existing methods</h2>
+            <div class="column content">
+              <p>
+
+              <br/>
+
+              </p>
+            </div>
+        </div>
+    </div>
+  <!-- 02 Weakness of existing methods -->
+  
+  
+  <!-- 03 Observation and motivation -->
+  <section class="section">
+    <div class="container is-max-desktop">
+        <div class="column is-full-width">
+          <h2 class="title is-4">03 Observation and motivation</h2>
+            <div class="column content">
+              <p>
+
+                <br/>
+
+                <br/>
+
+                <br/>
+                <!-- Your image here -->
+                <img src="static/images/" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/> 
+                <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px;">
+                  <span style="color: #f90b0be9">Figure 1.</span> 
+                </p>
+              </p>
+            </div>
+        </div>
+    </div>
+  <!-- 03 Observation and motivation -->
+
+
+  <!-- 04 Framework and method -->
+  <section class="section">
+    <div class="container is-max-desktop">
+        <div class="column is-full-width">
+          <h2 class="title is-4">04 Framework and method</h2>
+            <div class="column content">
+              <p>
+                <!-- Your image here -->
+                <img src="static/images/" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/> 
+                <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px;">
+                  <span style="color: #f90b0be9">
+                </p>
+                
+                <br/>
+                
+                <br/>
+                
+                <br/>
+              </p>
+            </div>
+        </div>
+    </div>
+  <!-- 04 Framework and method -->
+
+
+
+  <!-- 05 Experiments and annalysis -->
+  <section class="section">
+    <div class="container is-max-desktop">
+        <div class="column is-full-width">
+          <h2 class="title is-4">05 Experiments and annalysis</h2>
+            <div class="column content">
+              <p>
+                
+                <br/>
+                <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px;">
+                    <span style="color: #f90b0be9">
+                </p>
+                <img src="static/images/" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/>
+                <br/>
+                <strong>.</strong>
+                <br/>
+                <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px;">
+                    <span style="color: #f90b0be9">
+                </p>
+                <br/>
+                <strong> </strong>
+                <br/>
+                <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px;">
+                    <span style="color: #f90b0be9">Table 2.</span>  
+                </p>
+                <img src="static/images/" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/>
+                <br/>
+                <strong> </strong>
+                <br/>
+                <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px;">
+                    <span style="color: #f90b0be9">Table 3.</span>
+                </p>
+                <img src="static/images/" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/>
+              </p>
+            </div>
+        </div>
+    </div>
+  <!-- 05 Experiments and annalysis -->
+  
+    </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{xxxx2024xxxx,
+        title = {Paper Title},
+        author = {xxxx, xxxx and xxxx, xxxx and xxxx, xxxx and xxxx},
+        booktitle = {},
+        year = {2024},
+}</code></pre>
+    </div>
+  </section>
