@@ -27,24 +27,70 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./static/css/custom.css">
   
-  <!-- Inline CSS for Centered Video -->
+  <!-- Inline CSS -->
   <style>
+    body {
+      font-family: 'Google Sans', sans-serif;
+      background-color: #f5f5f5;
+      color: #363636;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    .header, .footer {
+      background-color: #3273dc;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+    .header:hover, .footer:hover {
+      background-color: #275aa8;
+    }
+    .header h1, .footer p {
+      margin: 0;
+    }
+    .content {
+      background-color: white;
+      padding: 2rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      transition: box-shadow 0.3s ease;
+    }
+    .content:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
     .centered-video {
       display: block;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
       width: 100%;
       max-width: 640px; /* You can change this value based on your desired video width */
     }
-  </style>
-  <!-- Inline CSS for Video caption -->
-  <style>
-  .centered-caption {
-    text-align: center;
-  }
+    .centered-caption {
+      text-align: center;
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 1rem;
+      color: #4a4a4a;
+      margin-top: 0.5rem;
+    }
   </style>
 </head>
+
+<!-- Title Name -->
 <body>
+  <div class="container">
+    <header class="header">
+      <!-- 可修改的地方：标题名称 -->
+      <h1>Paper Template</h1>
+    </header>
+    </main>
+  </div>
+</body>
 
 <!-- Navbar -->
 <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -484,6 +530,10 @@
     background-color: #444444;
   }
 </style>
-
+<!-- Custom footer for Theme -->
+<footer class="footer">
+<p>&copy; 2024 Your Company or Team. All rights reserved.</p>
+  </footer>
 </body>
+
 </html>
