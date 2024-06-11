@@ -5,7 +5,7 @@
   <meta name="description" content="">
   <meta name="keywords" content="keywords">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Revisiting the Power of Prompt for Visual Tuning</title>
+  <title>Paper-Template</title>
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -24,51 +24,24 @@
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
-  <!-- JavaScript Libraries -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-  <script src="./static/js/index.js"></script>
-
-  <!-- Inline Styles -->
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./static/css/custom.css">
+  
+  <!-- Inline CSS for Centered Video -->
   <style>
-    body {
-      font-family: 'Noto Sans', sans-serif;
+    .centered-video {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      max-width: 640px; /* You can change this value based on your desired video width */
     }
-    .hero {
-      background: #f5f5f5;
-      padding: 2rem 1.5rem;
-    }
-    .publication-title {
-      color: #333;
-    }
-    .publication-authors a {
-      color: #3273dc;
-    }
-    .publication-links .button {
-      margin: 0.5rem;
-    }
-    .section {
-      padding: 3rem 1.5rem;
-    }
-    .content img {
-      max-width: 100%;
-      height: auto;
-    }
-    .content p {
-      text-align: justify;
-      font-size: 16px;
-      line-height: 1.5;
-      margin-top: 10px;
-    }
-    .navbar {
-      background: #3273dc;
-    }
-    .navbar-item, .navbar-link {
-      color: #fff;
-    }
-    .navbar-item:hover, .navbar-link:hover {
-      background: #275ba1;
-    }
+  </style>
+  <!-- Inline CSS for Video caption -->
+  <style>
+  .centered-caption {
+    text-align: center;
+  }
   </style>
 </head>
 <body>
@@ -84,10 +57,47 @@
   </div>
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
+      <a class="navbar-item" href="https://islinxu.github.io/">
         <span class="icon">
           <i class="fas fa-home"></i>
         </span>
+        Home
+      </a>
+      <a class="navbar-item" href="#summary">
+        <span class="icon">
+          <i class="fas fa-file-alt"></i>
+        </span>
+        Summary
+      </a>
+      <a class="navbar-item" href="#weakness">
+        <span class="icon">
+          <i class="fas fa-exclamation-triangle"></i>
+        </span>
+        Weakness
+      </a>
+      <a class="navbar-item" href="#observation">
+        <span class="icon">
+          <i class="fas fa-eye"></i>
+        </span>
+        Observation
+      </a>
+      <a class="navbar-item" href="#framework">
+        <span class="icon">
+          <i class="fas fa-project-diagram"></i>
+        </span>
+        Framework
+      </a>
+      <a class="navbar-item" href="#experiments">
+        <span class="icon">
+          <i class="fas fa-vials"></i>
+        </span>
+        Experiments
+      </a>
+      <a class="navbar-item" href="#BibTeX">
+        <span class="icon">
+          <i class="fas fa-book"></i>
+        </span>
+        BibTeX
       </a>
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
@@ -100,201 +110,380 @@
           <a class="navbar-item" href="https://photoshape.github.io">PhotoShape</a>
         </div>
       </div>
+      <!-- New Dropdown for Additional Information -->
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Additional Info
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="#related-work">Related Work</a>
+          <a class="navbar-item" href="#future-work">Future Work</a>
+          <a class="navbar-item" href="#acknowledgements">Acknowledgements</a>
+        </div>
+      </div>
     </div>
-  </div>
-</nav>
-
-<!-- Hero Section -->
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Paper Title</h1>
-          <div class="is-size-5 publication-authors">
-            <!-- 可修改的地方：修改作者信息 -->
-            <span class="author-block">
-              <a href="https://scholar.google.com.hk/citations?user=xxxx">xxxx xxxx</a><sup>1</sup>,
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <button class="button is-light" id="theme-toggle">
+            <span class="icon">
+              <i class="fas fa-adjust"></i>
             </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=xxxx">xxxx xxxx</a><sup>2✉</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com.hk/citations?hl=zh-CN&xxxx">xxxx xxxx</a><sup>3</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com.hk/citations?hl=zh-CN&xxxx">xxxx xxxx</a><sup>4</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://">xxxx xxxx</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=xxxxx=pubdate">xxxx xxxx</a><sup>2</sup>,
-            </span>
-          </div>
-          <div class="is-size-5 publication-authors">
-            <!-- 可修改的地方：修改机构信息 -->
-            <span class="author-block"><sup>1</sup>xxxx xxxx,</span>
-            <span class="author-block"><sup>2</sup>xxxx xxxx,</span>
-            <span class="author-block"><sup>3</sup>xxxx xxxx,</span>
-            <span class="author-block"><sup>4</sup>xxxx xxxx,</span>
-          </div>
-          ✉ Corresponding author.
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- arxiv Link -->
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/xxxx" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Code Link -->
-              <span class="link-block">
-                <a href="https://github.com/isLinXu/" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                </a>
-              </span>
-            </div>
-            <h1><strong style="color: red; font-size: x-large;">XXXX 2024 Spotlight</strong></h1>
-          </div>
+            Toggle Theme
+          </button>
         </div>
       </div>
     </div>
   </div>
-</section>
+</nav>
 
-<!-- 01 Summary of the paper -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="column is-full-width">
-      <h2 class="title is-4">01 Summary of the paper</h2>
-      <div class="column content">
-        <p>
-          <!-- 可修改的地方：修改摘要内容 -->
-        </p>
+<!-- Main Content with Sidebar -->
+<div class="columns">
+  <!-- Sidebar -->
+  <aside class="column is-2 is-narrow-mobile is-fullheight section is-hidden-mobile">
+    <p class="menu-label">General</p>
+    <ul class="menu-list">
+      <li><a href="#summary">Summary</a></li>
+      <li><a href="#weakness">Weakness</a></li>
+      <li><a href="#observation">Observation</a></li>
+      <li><a href="#framework">Framework</a></li>
+      <li><a href="#experiments">Experiments</a></li>
+      <li><a href="#BibTeX">BibTeX</a></li>
+    </ul>
+    <p class="menu-label">Links</p>
+    <ul class="menu-list">
+      <li><a href="https://arxiv.org/abs/xxxx">arXiv</a></li>
+      <li><a href="https://github.com/isLinXu/">Code</a></li>
+      <li><a href="https://example.com/data">Data</a></li>
+      <li><a href="https://example.com/video">Video</a></li>
+      <li><a href="https://example.com/demo">Demo</a></li>
+    </ul>
+    <p class="menu-label">Additional Info</p>
+    <ul class="menu-list">
+      <li><a href="#related-work">Related Work</a></li>
+      <li><a href="#future-work">Future Work</a></li>
+      <li><a href="#acknowledgements">Acknowledgements</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="column is-10">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">Paper Title</h1>
+              <div class="is-size-5 publication-authors">
+                <!-- 可修改的地方：修改作者信息 -->
+                <span class="author-block">
+                  <a href="https://scholar.google.com.hk/citations?user=xxxx">xxxx xxxx</a><sup>1</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=xxxx">xxxx xxxx</a><sup>2✉</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://scholar.google.com.hk/citations?hl=zh-CN&xxxx">xxxx xxxx</a><sup>3</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://scholar.google.com.hk/citations?hl=zh-CN&xxxx">xxxx xxxx</a><sup>4</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://">xxxx xxxx</a><sup>1</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=xxxxx=pubdate">xxxx xxxx</a><sup>2</sup>,
+                </span>
+              </div>
+              <div class="is-size-5 publication-authors">
+                <!-- 可修改的地方：修改机构信息 -->
+                <span class="author-block"><sup>1</sup>xxxx xxxx,</span>
+                <span class="author-block"><sup>2</sup>xxxx xxxx,</span>
+                <span class="author-block"><sup>3</sup>xxxx xxxx,</span>
+                <span class="author-block"><sup>4</sup>xxxx xxxx,</span>
+              </div>
+              ✉ Corresponding author.
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- arxiv Link -->
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/xxxx" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+                  <!-- Code Link -->
+                  <span class="link-block">
+                    <a href="https://github.com/isLinXu/" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                  <!-- Data Link -->
+                  <span class="link-block">
+                    <a href="https://example.com/data" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-database"></i>
+                      </span>
+                      <span>Data</span>
+                    </a>
+                  </span>
+                  <!-- Video Link -->
+                  <span class="link-block">
+                    <a href="https://example.com/video" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-video"></i>
+                      </span>
+                      <span>Video</span>
+                    </a>
+                  </span>
+                  <!-- Demo Link -->
+                  <span class="link-block">
+                    <a href="https://example.com/demo" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-laptop-code"></i>
+                      </span>
+                      <span>Demo</span>
+                    </a>
+                  </span>
+                </div>
+                <h1><strong style="color: red; font-size: x-large;">XXXX 2024 Spotlight</strong></h1>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- 02 Weakness of existing methods -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="column is-full-width">
-      <h2 class="title is-4">02 Weakness of existing methods</h2>
-      <div class="column content">
-        <p>
-          <!-- 可修改的地方：修改现有方法的缺点内容 -->
-        </p>
+    </section>
+        
+    <!-- 可修改的地方：插入视频 -->
+    <video controls class="centered-video">
+    <source src="static/videos/your-video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+    <p class="figure-caption centered-caption">
+      <span>Video 1. Description of the video.</span>
+    </p>
+    
+    <!-- 01 Summary of the paper -->
+    <section class="section" id="summary">
+      <div class="container is-max-desktop">
+        <div class="column is-full-width">
+          <h2 class="title is-4">01 Summary of the paper</h2>
+          <div class="column content">
+            <p>
+              <!-- 可修改的地方：修改摘要内容 -->
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- 03 Observation and motivation -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="column is-full-width">
-      <h2 class="title is-4">03 Observation and motivation</h2>
-      <div class="column content">
-        <p>
-          <!-- 可修改的地方：修改观察和动机内容 -->
-          <img src="static/images/" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/>
-          <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px;">
-            <span style="color: #f90b0be9">Figure 1.</span>
-          </p>
-        </p>
+    <!-- 02 Weakness of existing methods -->
+    <section class="section" id="weakness">
+      <div class="container is-max-desktop">
+        <div class="column is-full-width">
+          <h2 class="title is-4">02 Weakness of existing methods</h2>
+          <div class="column content">
+            <p>
+              <!-- 可修改的地方：修改现有方法的缺点内容 -->
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- 04 Framework and method -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="column is-full-width">
-      <h2 class="title is-4">04 Framework and method</h2>
-      <div class="column content">
-        <p>
-          <!-- 可修改的地方：修改框架和方法内容 -->
-          <img src="static/images/" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/>
-          <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px;">
-            <span style="color: #f90b0be9">Figure 2.</span>
-          </p>
-        </p>
+    <!-- 03 Observation and motivation -->
+    <section class="section" id="observation">
+      <div class="container is-max-desktop">
+        <div class="column is-full-width">
+          <h2 class="title is-4">03 Observation and motivation</h2>
+          <div class="column content">
+            <p>
+              <!-- 可修改的地方：修改观察和动机内容 -->
+              <img src="static/images/" alt="1" class="centered-image"/>
+              <p class="figure-caption">
+                <span>Figure 1.</span>
+              </p>
+              
+              <!-- 可修改的地方：插入图片 -->
+              <img src="static/images/your-image.jpg" alt="Description of image" class="centered-image"/>
+              <p class="figure-caption">
+              <span>Figure 1. Description of the image.</span>
+              </p>
+              
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- 05 Experiments and analysis -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="column is-full-width">
-      <h2 class="title is-4">05 Experiments and analysis</h2>
-      <div class="column content">
-        <p>
-          <!-- 可修改的地方：修改实验和分析内容 -->
-          <img src="static/images/" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/>
-          <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px;">
-            <span style="color: #f90b0be9">Table 1.</span>
-          </p>
-          <img src="static/images/" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/>
-          <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px;">
-            <span style="color: #f90b0be9">Table 2.</span>
-          </p>
-          <img src="static/images/" alt="1" style="width: auto; height: auto; display: block; margin: 0 auto;"/>
-          <p style="text-align: justify; font-size: 16px; line-height: 1.5; margin-top: 10px;">
-            <span style="color: #f90b0be9">Table 3.</span>
-          </p>
-        </p>
+    <!-- 04 Framework and method -->
+    <section class="section" id="framework">
+      <div class="container is-max-desktop">
+        <div class="column is-full-width">
+          <h2 class="title is-4">04 Framework and method</h2>
+          <div class="column content">
+            <p>
+              <!-- 可修改的地方：修改框架和方法内容 -->
+              <img src="static/images/" alt="1" class="centered-image"/>
+              <p class="figure-caption">
+                <span>Figure 2.</span>
+              </p>
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- BibTeX Section -->
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@inproceedings{xxxx2024xxxx,
+    <!-- 05 Experiments and analysis -->
+    <section class="section" id="experiments">
+      <div class="container is-max-desktop">
+        <div class="column is-full-width">
+          <h2 class="title is-4">05 Experiments and analysis</h2>
+          <div class="column content">
+            <p>
+              <!-- 可修改的地方：修改实验和分析内容 -->
+              <img src="static/images/" alt="1" class="centered-image"/>
+              <p class="figure-caption">
+                <span>Table 1.</span>
+              </p>
+              <img src="static/images/" alt="1" class="centered-image"/>
+              <p class="figure-caption">
+                <span>Table 2.</span>
+              </p>
+              <img src="static/images/" alt="1" class="centered-image"/>
+              <p class="figure-caption">
+                <span>Table 3.</span>
+              </p>
+              
+              
+              <table class="table is-striped is-fullwidth">
+                <thead>
+                <tr>
+                  <th>Header 1</th>
+                  <th>Header 2</th>
+                  <th>Header 3</th>
+                </tr>
+                </thead>
+              <tbody>
+                <tr>
+                  <td>Data 1</td>
+                  <td>Data 2</td>
+                  <td>Data 3</td>
+                </tr>
+                <tr>
+                  <td>Data 4</td>
+                  <td>Data 5</td>
+                  <td>Data 6</td>
+                </tr>
+              </tbody>
+              </table>
+              <p class="figure-caption">
+                <span>Table 1. Description of the table.</span>
+              </p>
+              
+              
+              
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Work Section -->
+    <section class="section" id="related-work">
+      <div class="container is-max-desktop">
+        <div class="column is-full-width">
+          <h2 class="title is-4">Related Work</h2>
+          <div class="column content">
+            <p>
+              <!-- 可修改的地方：修改相关工作内容 -->
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Future Work Section -->
+    <section class="section" id="future-work">
+      <div class="container is-max-desktop">
+        <div class="column is-full-width">
+          <h2 class="title is-4">Future Work</h2>
+          <div class="column content">
+            <p>
+              <!-- 可修改的地方：修改未来工作内容 -->
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Acknowledgements Section -->
+    <section class="section" id="acknowledgements">
+      <div class="container is-max-desktop">
+        <div class="column is-full-width">
+          <h2 class="title is-4">Acknowledgements</h2>
+          <div class="column content">
+            <p>
+              <!-- 可修改的地方：修改致谢内容 -->
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BibTeX Section -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@inproceedings{xxxx2024xxxx,
   title = {Paper Title},
   author = {xxxx, xxxx and xxxx, xxxx and xxxx, xxxx and xxxx},
   booktitle = {},
   year = {2024},
 }</code></pre>
+      </div>
+    </section>
   </div>
-</section>
+</div>
 
-<!-- Navbar Burger Script -->
+<!-- JavaScript Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+<script src="./static/js/index.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="./static/js/custom.js"></script>
+
+<!-- Theme Toggle Script -->
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Get all "navbar-burger" elements
-    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-    // Check if there are any navbar burgers
-    if ($navbarBurgers.length > 0) {
-      // Add a click event on each of them
-      $navbarBurgers.forEach(el => {
-        el.addEventListener('click', () => {
-          // Get the target from the "data-target" attribute
-          const target = el.dataset.target;
-          const $target = document.getElementById(target);
-
-          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-          el.classList.toggle('is-active');
-          $target.classList.toggle('is-active');
-        });
-      });
-    }
+  document.getElementById('theme-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('dark-theme');
   });
 </script>
+
+<!-- Custom CSS for Theme -->
+<style>
+  body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  body.dark-theme .navbar, body.dark-theme .hero, body.dark-theme .section {
+    background-color: #1e1e1e;
+  }
+  body.dark-theme .button {
+    background-color: #333333;
+    color: #ffffff;
+  }
+  body.dark-theme .button:hover {
+    background-color: #444444;
+  }
+</style>
 
 </body>
 </html>
